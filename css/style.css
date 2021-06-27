@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  background-color: black;
+  color: rgb(230, 188, 19);
+}
+
+.title {
+  max-width: 500px;
+}
+
+.wrapper {
+  max-width: 1100px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 2px solid  rgb(230, 188, 19);
+  transition: all 0.2s ease;
+  /* adds transition to hover  */
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.restart:hover {
+  background-color:  rgb(230, 188, 19);
+  color: black;
+  font-weight: 500;
+}
+
+.left {
+  margin-top: 165px;
+}
+
+.right {
+  margin-top: 150px;
+}
+
+.game {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  color: #d2cccc;
+  font-size: 24px;
+}
+
+.player-x,
+.player-o {
+  flex: 1;
+  border-bottom: 5px solid#eee;
+  border-radius: 5px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.player-x.active {
+  color: #f7ace2;
+  border-color: #f7ace2;
+}
+
+.player-o.active {
+  color: #8c3fea;
+  border-color:#8c3fea;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* to stretch between the whole area */
+  flex-grow: 1;
+  grid-gap: 0;
+}
+
+.board-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  cursor: pointer;
+}
+
+.tilex {
+  color: #f7ace2;
+}
+
+.tileo {
+  color: #8c3fea;
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(50, 91, 132, 0.3);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(50, 91, 132, 0.3);
+}
+
+.board-tile:hover {
+  background: rgb(28, 27, 27);
+}
+
+.tile-winner span{
+  color: cyan;
+}
+
+.winner {
+  margin-top: 50px;
+  height: 50px;
+}
+
+.winner span {
+  font-weight: bold;
+  padding-left: 80px;
+  text-align: center;
+  font-size: 35px;
+  color: cyan;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-top: 100px;
+  }
+
+  .right {
+    margin-top: 100px;
+    padding-bottom: 50px;
+  }
+}
